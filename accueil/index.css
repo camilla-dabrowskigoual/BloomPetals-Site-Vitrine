@@ -1,0 +1,409 @@
+/*Mise en place de la couleur beige et de la page blanche selon la maquette*/
+
+/* On retire les marges blanches de notre contenu */
+body {
+    margin: 10px auto 0;
+    max-width: 1300px;
+    background-color: #f5eee8;
+}
+
+
+/* On place nos élements dans une page blanche selon la maquette*/
+.container {
+    background-color: white;
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 5px 30px 20px;
+}
+
+
+/* EN-TETE*/
+
+/*On met en forme l'en-tete : couleur, hauteur, répartition des élements */
+header {
+    background-color: #797D87;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 1300px;
+    margin-bottom: 40px;
+    padding: 0 80px;
+    box-sizing: border-box;
+}
+
+
+/*On positionne chaque lien entre eux*/
+nav {
+    display: flex;
+    gap: 0px;
+    height: 100%;
+}
+
+
+/* On met en forme chaque lien de notre header*/
+nav a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: black;
+    padding: 0px 25px;
+    display: flex;
+    align-items: center;
+}
+
+/* On utilise hover pour ajouter un effet quand on passe avec la souris */
+nav a:hover {
+    color: #eeeeee;
+    background-color: rgba(7, 6, 6, 0.132);
+}
+
+/*Mise en forme des barres entre les liens*/
+nav span {
+    font-size: 20px;
+    color: black;
+    align-self: center;
+}
+
+/*Mise en forme de la barre de recherche : arrondi, enlever bordure... */
+input {
+    border-radius: 20px;
+    background-color: lightgray;
+    width: 250px;
+    height: 26px;
+    border: none;
+}
+
+
+/* CORPS */
+
+/* Mise en forme du titre */
+.title {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: black;
+    letter-spacing: 2px;
+    transform: scale(1.1);
+    margin-top: 0;
+}
+
+/* Changement de couleur quand on passe avec la souris sur le titre*/
+.title:hover {
+    color: crimson;
+}
+
+
+/* Mise en forme des titres A propos, notre engagement...*/
+h4 {
+    color: crimson;
+    font-size: 20px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    transition: color 0.3s ease;
+}
+
+h4::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: pink;
+    margin-top: 8px;
+}
+
+
+/* Mise en place d'une liste, sans puce */
+ul {
+    list-style: none;
+}
+
+
+/* Barre grise selon la maquette */
+hr {
+    border: none;
+    border-top: 2.1px solid #999;
+    margin: 35px 0px;
+}
+
+
+/*Mise en forme des élements dans la section flowers1*/
+.flowers1 {
+    display: flex;
+    /*alignement des élements les uns a côté des autres*/
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    /* espace entre chaque élement*/
+}
+
+
+/*Mise en page de chaque image*/
+.flowers1 img {
+    height: 145px;
+    width: 200px;
+    object-fit: cover;
+    /*permet à l'image de ne pas se deformer*/
+    box-sizing: content-box;
+    /*permet de garder les dimensions de l'image même si on ajoute des paddings etc*/
+    padding: 8px;
+    /*padding pour mettre une bordure autour de chaque image*/
+    border: 2px solid #eeeeee;
+    /*solid pour que le trait de la bordure soit continu*/
+}
+
+/* Effet sur chaque image quand on passe dessus*/
+.flowers1 img:hover {
+    transform: scale(1.1);
+    /*Elles augmentent de 1% (1.1)*/
+}
+
+
+/* Ajustement des élements dans la section services*/
+.services {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 20px;
+    /*espace entre chaque élement*/
+}
+
+
+/*Mise en forme de chaque article et des élements qu'il contient*/
+.services article {
+    flex: 1;
+    /*chaque article occupe la même place disponible dans la section services*/
+    display: flex;
+    flex-direction: column;
+    /*les élements dans article sont en colonne*/
+}
+
+
+/*Mise en forme des read more*/
+.services a {
+    margin-top: auto;
+    /*Met un espace au-dessus de read more pour que read more soit toujours en bas du paragrpahe*/
+    color: rgb(37, 135, 173);
+    text-decoration: none;
+    /*on retire le trait sous le lien de read more*/
+}
+
+/* Modifie les élements en noir et gras quand on passe dessus*/
+.services a:hover {
+    color: black;
+    font-weight: bolder;
+}
+
+
+/* On retire l'espace blanc en haut de chaque paragraphe*/
+.services p {
+    margin-top: 0px;
+}
+
+
+/*Disposition de chaque titre avec le check*/
+.services h3 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /*espace entre le check et le titre*/
+    font-size: 17px;
+    white-space: nowrap;
+    /*empeche le titre de passer à la ligne*/
+    margin-top: 0px;
+    /*enlever l'espace blanc entre le titre et "Nos services"*/
+}
+
+
+/*Mise en forme du check*/
+.check {
+    display: flex;
+    border: none;
+    border-radius: 50%;
+    /*permet d'avoir un arrondi des bords*/
+    width: 20px;
+    /* witdth égal au height ce qui permet d'avoir un cercle*/
+    height: 20px;
+    font-size: 14px;
+    /*taille de l'élement check*/
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(15, 135, 205);
+    color: #eeeeee;
+}
+
+
+/* Pied de page gris selon la maquette */
+footer {
+    background-color: #797D87;
+    height: 50px;
+    margin-top: 40px;
+    /*On ajoute un margin pour avoir un espace beige entre la page blanche et le pied de page gris*/
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+}
+
+
+/*Mise en forme des liens au pied de page*/
+footer a {
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transform: translateY(-5px);
+}
+
+/*Mise en forme des liens quand on passe dessus avec la souris*/
+footer a:hover {
+    text-decoration: overline;
+}
+
+
+
+/* ============================= */
+/* RESPONSIVE - TABLETTE         */
+/* ============================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* Adapte l'en-tête à la largeur de l'écran */
+    header {
+        min-width: 0;
+        height: auto;
+        padding: 15px 20px;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Adapte les liens du menu */
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 10px 15px;
+    }
+
+    /* Adapte la page blanche */
+    .container {
+        margin: 0 20px;
+    }
+
+    /* Affiche deux images par ligne */
+    .flowers1 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Affiche deux services par ligne */
+    .services {
+        flex-wrap: wrap;
+    }
+
+    .services article {
+        flex: 1 1 40%;
+        min-width: 0;
+    }
+
+    /* Permet aux titres des services de passer à la ligne */
+    .services h3 {
+        white-space: normal;
+    }
+}
+
+
+/* ============================= */
+/* RESPONSIVE - TÉLÉPHONE        */
+/* ============================= */
+
+@media (max-width: 767px) {
+
+    /* Adapte l'en-tête */
+    header {
+        min-width: 0;
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    /* Affiche les liens du menu en colonne */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    /* Cache les barres verticales du menu */
+    nav span {
+        display: none;
+    }
+
+    /* Adapte la barre de recherche */
+    input {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Adapte la page blanche */
+    .container {
+        margin: 0 10px;
+        padding: 15px;
+    }
+
+    /* Adapte le titre BloomPetals */
+    .title {
+        font-size: 30px;
+        transform: none;
+    }
+
+    /* Adapte les images en colonne */
+    .flowers1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .flowers1 img {
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    /* Affiche les services en colonne */
+    .services {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Permet aux titres des services de passer à la ligne */
+    .services h3 {
+        white-space: normal;
+    }
+
+    /* Adapte la liste */
+    ul {
+        padding-left: 20px;
+    }
+
+    /* Adapte le pied de page */
+    footer {
+        height: auto;
+        min-height: 50px;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+    }
+}

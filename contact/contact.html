@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap">
+</head>
+
+
+
+
+<body>
+
+    <!--En-tête-->
+    <header>
+
+        <h1><span id="contact">Contactez</span>-nous</h1>
+
+        <nav> <!--Insertion menu de navigation-->
+            <a href="../accueil/index.html">Home</a>
+            <a href="../entreprise/Entreprise.html">Entreprise</a>
+            <a href="../realisations/realisations.html">Nos réalisations</a>
+            <a href="../contact/contact.html">Contact</a>
+        </nav>
+
+        <a href="../accueil/index.html">
+            <img src="../images/logo-bloompetals.png" alt="logo">
+        </a><!--Ajout du lien de l'accueil sur le logo-->
+
+    </header>
+
+    <!--Contenu secondaire-->
+    <aside>
+        <div class="phone">
+            <h2> 📞 Par téléphone</h2>
+            <p>06.55.89.46.80</p>
+        </div>
+
+        <div class="email">
+            <h2> @ Par e-mail</h2>
+            <a href="mailto:camilla.dabrowski-goual@laplateforme.io">camilla.dabrowski-goual@laplateforme.io</a>
+        </div>
+
+        <div class="place">
+            <h2>📍 Notre emplacement</h2>
+            <p>107 rue de la République</p>
+            <p>06400 Cannes</p>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.2712232639765!2d7.0185074759971275!3d43.55923127110718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ce81ec5ae7994f%3A0x9bcbee6cfa9fc61a!2s107%20Bd%20de%20la%20R%C3%A9publique%2C%2006400%20Cannes!5e0!3m2!1sfr!2sfr!4v1795355617096!5m2!1sfr!2sfr"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+        </div>
+    </aside>
+
+<!--Contenu principal-->
+    <main>
+
+        <form><!--Balise form pour ajouter un formulaire-->
+
+            <div>
+                <label for="civilité">Choisissez votre civilité :</label>
+                <select id="civilité" name="civilité" required><!--select permet d'avoir une liste déroulante-->
+
+                    <option value="">--Choisissez--</option>
+                    <option value="madame">Madame</option>
+                    <!--value nous permet d'avoir un résultat du type civilité (id)=madame (value)-->
+                    <option value="mademoiselle">Mademoiselle</option>
+                    <option value="monsieur">Monsieur</option>
+
+                </select>
+            </div>
+
+            <div>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom"
+                    placeholder="Entrez votre nom"><!--permet au lecteur d'inscrire un texte, id relie le champ au label, name permet de nous retourner le résultat nom=camilla par exemple-->
+            </div>
+
+            <div>
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom"
+                    placeholder="Entrez votre prénom"><!--required indique que le champ est obligatoire-->
+            </div>
+
+            <div>
+                <label for="adresse">Adresse :</label>
+                <input type="text" id="adresse" name="adresse" placeholder="Entrez votre adresse postale">
+                <!--placeholder permet d'afficher une indication dans le champ blanc-->
+            </div>
+
+            <div>
+                <label for="code postal">Code postal :</label>
+                <input type="text" id="code_postal" name="code postal" placeholder="Entrez votre code postal" required>
+            </div>
+
+            <div>
+                <label for="ville">Ville :</label>
+                <input type="text" id="ville" name="ville" placeholder="Entrez votre ville de résidence" required>
+            </div>
+
+            <div>
+                <label for="email">Adresse e-mail :</label>
+                <input type="email" id="email" name="email"
+                    placeholder="exemple@gmail.com"><!--type="email" pour reconnaitre la forme de l'email-->
+            </div>
+
+            <div>
+                <label for="message">Votre message :</label>
+                <textarea id="message" name="message" rows="6"
+                    placeholder="Ecrivez votre message..."></textarea><!--textarea pour insérer une zone de texte-->
+            </div>
+
+            <div>
+                <input type="checkbox" id="confidentialité" name="confidentialité"
+                    required><!--checkbox pour pouvoir cocher une case-->
+                <label for="confidentialité">J'accepte la politique de confidentialité de l’entreprise.</label>
+
+            </div>
+
+            <button type="submit">Envoyer</button><!--submit pour soumettre le formulaire-->
+
+        </form>
+
+    </main>
+
+    <footer><!--pied de page-->
+        <a href="../accueil/index.html">Home</a>
+        <a href="../entreprise/Entreprise.html">Entreprise</a>
+        <a href="../realisations/realisations.html">Nos réalisations</a>
+        <a href="../contact/contact.html">Contact</a>
+
+    </footer>
+
+</body>
+
+</html>

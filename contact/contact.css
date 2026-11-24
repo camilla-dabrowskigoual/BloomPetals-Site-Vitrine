@@ -1,0 +1,365 @@
+/*Mise en forme du corps de la page : image en fond, marge...*/
+body{
+background-image: url(images/il_1588xN.7644876502_gygk.webp);
+background-size: cover;
+background-position:center;
+background-repeat: no-repeat;
+background-attachment: fixed; /*L'image du fond ne se déplace pas*/
+margin:0;
+padding:0;
+}
+
+/*Mise en forme du titre*/
+h1{
+    margin: 20px auto; /*Marge de 20px en haut et en bas et calcule automatique à droite et à gauche pour centrer*/
+    font-family:'Cormorant Garamond', serif;
+    font-size: 50px;
+    letter-spacing: 1px;
+    width: 745px;
+}
+
+/*Insérer une barre sous le titre*/
+h1::after{
+    content:"";
+    width: 120px;
+    background-color: darkcyan;
+    height: 5px;
+    margin-top: 8px;
+    display: block;
+}
+
+/*Couleur du mot "contactez"*/
+#contact{
+    color:rgb(167, 57, 103) ;
+}
+
+/*Effet sur le titre quand on le survole avec la souris*/
+h1:hover {
+    color:rgb(188, 125, 61);
+}
+
+h1:hover #contact{ /*Pour que le mot "contactez" soit pris en compte lors du survole avec la souris car il est dans une balise span"*/
+    color:rgb(188, 125, 61);
+}
+
+/*Mise en forme du menu de navigation*/
+header nav{
+    display: flex;
+    flex-direction: column;
+    gap : 20px;
+    position: fixed;
+    top: 230px;
+    right : 20px;
+}
+
+header nav a{
+    text-decoration: none;
+    color: darkcyan;
+    font-size: 19px;
+    font-style: oblique;
+    text-shadow:2px 2px 4px rgba(143, 142, 142, 0.301);
+    letter-spacing: 1px;
+    transition: width 0.3s ease;
+}
+
+/*Effet quand on survole les élements du menu de navigation*/
+header nav a:hover{
+    text-shadow: 2px 2px 4px rgba(143, 142, 142, 0.563) ;
+    font-size: 21px;
+}
+
+/*Ajout d'une barre au-dessus des liens du menu quand on les survole*/
+header nav a::before{
+    content: "";
+    width: 0; /*width 0 pour qu'elle apparaisse avec le hover où elle sera à 100%*/
+    height: 3px;
+    background-color: rgb(226, 189, 141);
+    display: block; /*permet son apparition*/
+    transition: width 0.3s ease;
+}
+
+header nav a:hover::before{
+    width: 100%;
+}
+
+/*Mise en forme du logo de BloomPetals*/
+header img{
+    left:0;
+    top:50px;
+    width: 170px;
+    height: auto;
+    position: absolute;
+}
+
+/*Ajout des autres types de contact dans un aside*/
+aside{
+    display: flex;
+    flex-direction: column; /*On place les élements en colonne*/
+    position: absolute; /*Evite que aside bouge les autres élements*/
+    left: 20px;
+    gap: 15px;
+    width: 250px; /*Largeur aside*/
+}
+
+/*Mise en forme des titres dans aside*/
+aside div h2{
+    font-size: 20px;
+    color: #a73565;
+    margin-bottom: 13px;
+    margin:0 0 15px;
+}
+
+/*Mise en forme de chaque div dans aside*/
+aside div{
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 18px;}
+
+/*Mise en forme des informations dans chaque div*/
+aside div p{
+    font-size: 16px;
+    margin:0;
+}
+
+/*Mise en forme du lien de l'email*/
+.email a{
+    color: black;
+    text-decoration: none;
+}
+
+/*Effet quand on survole l'adresse email*/
+.email a:hover{
+    text-decoration: underline;
+}
+
+/*Mise en forme de la carte de Google Map*/
+.place iframe{
+    width: 100%;
+    margin-top: 20px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+/*Mise en forme du formulaire*/
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto; /*Permet de centrer le formulaire*/
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding : 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 700px;
+}
+
+
+/*Mise en forme des élements du formulaire*/
+
+
+/*Texte des informations demandées*/
+form label{
+    font-size: 17px;
+    color: #444;
+}
+
+/*Mise en forme des cases blanches*/
+form input:not([type="checkbox"]), form select, form textarea { /*On ne prend pas la checkbox car c'est juste une coche*/
+    width: 100%;
+    padding: 12px;
+    border-radius: 7px;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid #d9c5cc;
+    box-sizing: border-box;} /* Inclut le padding et la bordure dans la largeur et la hauteur de l'élément */
+
+/*Effet quand on clique sur une case*/
+form input:focus, form select:focus, form textarea:focus {
+outline: none; /*Supprime le contour par défaut*/
+border-color:darkcyan;
+}
+
+/*Texte à l'intérieur des cases blanches*/
+form input::placeholder, form textarea::placeholder {
+    color: #999;}
+
+/*Case blanche du message*/
+form textarea{
+    resize: vertical; /*Permet au lecteur d'ajuster verticalement la taille de la zone du message*/
+    min-height: 120px;
+}
+
+/*Case à cocher*/
+form input[type="checkbox"]{
+    cursor:pointer; /*Permet que la souris devienne une main quand on survole la case*/
+    accent-color:rgb(188, 125, 61);
+}
+
+/*Bouton envoyer*/
+form button{
+    background-color: #a73565;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 13px;
+}
+
+/*Effet quand on survole le bouton envoyer*/
+form button:hover{
+    background-color: rgb(188, 125, 61);
+}
+
+footer {
+    background-color: #797D87;
+    height: 50px;
+    margin-top: 40px;
+    /*On ajoute un margin pour avoir un espace entre la grid et le pied de page gris*/
+    display: flex;
+    align-items: end; /*Les élements se situent en bas du pied de page gris*/
+    justify-content: space-around;
+}
+
+footer a {
+    font-size: 12px;
+    color: white;
+    font-weight: bold; /*Les liens sont en gras*/
+    text-decoration: none;
+    transform: translateY(-3px); /*Permet de monter de 3px les élements du bas de la page*/
+}
+
+/*Mise en forme des liens quand on passe dessus avec la souris*/
+footer a:hover {
+    text-decoration: overline; /*Ajout d'une ligne au-dessus de chaque élement*/
+}
+
+
+/* ============================= */
+/* RESPONSIVE - TABLETTE         */
+/* ============================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* Adapte le titre à la largeur de l'écran */
+    h1 {
+        width: auto;
+        margin: 30px;
+        text-align: center;
+    }
+
+    /* Replace le logo */
+    header img {
+        position: static;
+        display: block;
+        margin: 20px auto;
+    }
+
+    /* Place le menu sous le logo */
+    header nav {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px;
+    }
+
+    /* Place les coordonnées au-dessus du formulaire */
+    aside {
+        position: static;
+        width: auto;
+        margin: 30px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    aside div {
+        flex: 1 1 200px;
+        min-width: 0;
+    }
+
+    /* Permet à l'adresse e-mail de passer à la ligne */
+    .email a {
+        overflow-wrap: anywhere;
+    }
+
+    /* Adapte la largeur du formulaire */
+    form {
+        width: auto;
+        max-width: 700px;
+        margin: 30px;
+    }
+}
+
+
+/* ============================= */
+/* RESPONSIVE - TÉLÉPHONE        */
+/* ============================= */
+
+@media (max-width: 767px) {
+
+    /* Adapte le titre principal */
+    h1 {
+        width: auto;
+        font-size: 36px;
+        text-align: center;
+        margin: 30px 20px;
+    }
+
+    /* Centre le logo */
+    header img {
+        position: static;
+        display: block;
+        margin: 20px auto;
+    }
+
+    /* Place le menu en colonne */
+    header nav {
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin: 20px;
+    }
+
+    /* Place les coordonnées en colonne */
+    aside {
+        position: static;
+        width: auto;
+        margin: 20px;
+        gap: 20px;
+    }
+
+    /* Permet à l'adresse e-mail de passer à la ligne */
+    .email a {
+        overflow-wrap: anywhere;
+    }
+
+    /* Adapte la carte Google Maps */
+    .place iframe {
+        width: 100%;
+        height: 200px;
+    }
+
+    /* Adapte le formulaire à l'écran */
+    form {
+        width: auto;
+        margin: 20px;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    /* Adapte le pied de page */
+    footer {
+        height: auto;
+        min-height: 50px;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+    }
+}

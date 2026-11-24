@@ -1,0 +1,247 @@
+/*Mise en forme du corps de la page : image en fond, marge...*/
+body{
+background-image: url(images/il_1588xN.7644876502_gygk.webp);
+background-size: cover;
+background-position:center;
+background-repeat: no-repeat;
+background-attachment: fixed; /*L'image du fond ne se déplace pas*/
+margin:0;
+padding:0;
+}
+
+header{
+    margin: 0 12.5%  /*Permet de commencer le header à 12,5% à gauche au même niveau que la grid*/
+}
+
+
+/*Mise en forme du titre*/
+h1{
+    font-family:'Cormorant Garamond', serif;
+    font-size: 50px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+/*Couleur de "réalisations"*/
+.title{
+    color: rgb(167, 57, 103);
+}
+
+/*Ajout d'une barre sous le titre avec ::after*/
+h1::after {
+    content: " ";
+    background-color: darkcyan;
+    width: 120px;
+    height: 4px;
+    display: block; /*Permet d'afficher la peite barre*/
+    margin-top: 8px;
+}
+
+/*Effet quand on survole le titre avec la souris*/
+h1:hover {
+    color: rgb(188, 125, 61);
+}
+
+h1:hover .title {
+    color: rgb(188, 125, 61);
+}
+
+/*Mise en page du logo BloomPetals*/
+.move img{
+    width: 170px; /*Largeur du logo*/
+    height: auto;
+    top : 80px; /*80px sépare le titre du haut de la page*/
+    left: 0px;
+    position: absolute; /*Permet de ne pas pousser les autres élements vers le bas*/
+}
+
+nav{
+    display: flex;
+    flex-direction: column; /*Permet de mettre les élements en colonne*/
+    gap: 20px; /*Espace entre chaque élement*/
+    position: fixed; /* Permet de garder les liens toujours au même endroit*/
+    top : 280px; /*Ecart du haut de la page*/
+    left : 20px; /*Ecart de la gauche de la page*/
+}
+
+nav a{
+    font-style: oblique; /*Permet de mettre les liens en italique*/
+    color:darkcyan ;
+    text-decoration: none; /*Suppression des lignes sous les liens*/
+    font-size: 19px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(143, 142, 142, 0.301); /*Ajout d'un effet ombré*/
+    transition: text-shadow 0.3s ease; /*Fait apparaître et disparaître progressivement l'ombre avec le hover*/
+}
+
+/*Ajout d'effet quand on survole les liens avec la souris*/
+nav a:hover{
+ text-shadow: 2px 2px 4px rgba(143, 142, 142, 0.563);
+ font-size: 21px;
+}
+
+/*Ajout d'une ligne au-dessus des liens*/
+nav a::before {
+    content: "";
+    display: block; /*Fait apparaître la ligne*/
+    width: 0;
+    height: 3px;
+    background-color: rgb(226, 189, 141);
+    transition: width 0.3s ease; /*Permet l'apparition progressive des lignes*/
+}
+
+/*Ajout d'un effet de la ligne quand on survole les liens avec la souris*/
+nav a:hover::before {
+    width: 100%; /*Permet l'apparition de la ligne quand on la survole*/
+}
+
+/*Grid*/
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr; /*Permet de mettre une image sur deux qui a une largeur différente*/
+    grid-template-rows: repeat(3, 200px);
+    gap: 8px; /*Espace entre chaque élement de la grid*/
+    max-height: 900px;
+    margin: 0 12.5%; /*Commence la grid à 12,5% à gauche*/
+}
+    
+.parent img {
+    width: 100%; /*L'image remplit toute la largeur de sa case*/
+    height: 100%; /*L'image remplit toute la hauteur de sa case*/
+    object-fit: cover; /*Remplit la case sans deformer l'image*/
+    transition: transform 0.3s ease; /*Permet à l'image de changer progressivement quand la souris passe sur elle et la quitte*/
+    border-radius: 7px; /*Arrondit les bords des images*/
+}
+
+.parent img:hover {
+    transform: scale(1.1); /*Aggrandit l'image de 10%*/
+}
+
+.parent div{
+    overflow: hidden; /*Permet que les bords de l'image (du contenant) ne se déforment pas*/
+}
+
+/* Pied de page gris selon la maquette */
+footer {
+    background-color: #797D87;
+    height: 50px;
+    margin-top: 40px;
+    /*On ajoute un margin pour avoir un espace entre la grid et le pied de page gris*/
+    display: flex;
+    align-items: end; /*Les élements se situent en bas du pied de page gris*/
+    justify-content: space-around;
+}
+
+/*Mise en forme des liens au pied de page*/
+footer a {
+    font-size: 12px;
+    color: white;
+    font-weight: bold; /*Les liens sont en gras*/
+    text-decoration: none;
+    transform: translateY(-3px); /*Permet de monter de 3px les élements du bas de la page*/
+}
+
+/*Mise en forme des liens quand on passe dessus avec la souris*/
+footer a:hover {
+    text-decoration: overline; /*Ajout d'une ligne au-dessus de chaque élement*/
+}
+
+
+/* ============================= */
+/* RESPONSIVE - TABLETTE         */
+/* ============================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* Adapte le titre */
+    header {
+        margin: 0 30px;
+    }
+
+    h1 {
+        font-size: 42px;
+        text-align: center;
+    }
+
+    /* Centre le logo */
+    .move img {
+        position: static;
+        display: block;
+        margin: 20px auto;
+    }
+
+    /* Place le menu sous le logo */
+    nav {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 20px;
+    }
+
+    /* Affiche 3 images par ligne */
+    .parent {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: none;
+        grid-auto-rows: 180px;
+        max-height: none;
+        margin: 30px;
+        gap: 10px;
+    }
+}
+
+
+/* ============================= */
+/* RESPONSIVE - TÉLÉPHONE        */
+/* ============================= */
+
+@media (max-width: 767px) {
+
+    /* Adapte le titre */
+    header {
+        margin: 0 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    /* Centre le logo */
+    .move img {
+        position: static;
+        display: block;
+        margin: 20px auto;
+    }
+
+    /* Place le menu en colonne */
+    nav {
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin: 20px;
+    }
+
+    /* Affiche 2 images par ligne */
+    .parent {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: none;
+        grid-auto-rows: 160px;
+        max-height: none;
+        margin: 20px;
+        gap: 8px;
+    }
+
+    /* Adapte le pied de page */
+    footer {
+        height: auto;
+        min-height: 50px;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+    }
+}
+        
