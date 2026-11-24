@@ -7,6 +7,12 @@ BloomPetals est un site vitrine dédié à une entreprise de fleuristerie, réal
 
 L'objectif de ce projet est de concevoir un site web moderne, élégant et responsive, mettant en valeur les services, les créations florales, l'équipe et les valeurs de l'entreprise.
 
+## 🌐 Site en ligne
+
+Découvrez le site BloomPetals :
+
+[🌸 Visiter le site BloomPetals](https://camilla-dabrowskigoual.github.io/BloomPetals-Site-Vitrine/)
+
 ## 🌷 Les pages du site
 
 - **Accueil** : présentation de BloomPetals et de ses services.
