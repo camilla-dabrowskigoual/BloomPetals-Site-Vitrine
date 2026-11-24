@@ -3,7 +3,7 @@
 
 ## 📖 Présentation du projet
 
-BloomPetals est un site vitrine dédié à une entreprise de fleuristerie, réalisé dans le cadre de ma formation à La Plateforme_ à Marseille.
+BloomPetals est un site vitrine dédié à une entreprise de fleuristerie, réalisé dans le cadre de ma formation à La Plateforme à Cannes.
 
 L'objectif de ce projet est de concevoir un site web moderne, élégant et responsive, mettant en valeur les services, les créations florales, l'équipe et les valeurs de l'entreprise.
 
@@ -72,7 +72,7 @@ BloomPetals/
 
 **Camilla Dabrowski Goual**
 
-Étudiante à La Plateforme_ – Marseille.
+Étudiante à La Plateforme - Cannes.
 
 ## 📅 Contexte du projet
 
